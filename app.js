@@ -6,7 +6,7 @@ if (match) {
   brokers.forEach((broker) => { broker.hidden = broker !== match; });
   const name = match.querySelector('strong').textContent;
   document.getElementById('registration-title').textContent = `Register with ${name}.`;
-  document.getElementById('broker-count').textContent = 'YOUR INTRODUCING BROKER';
+  document.getElementById('broker-count').textContent = 'YOUR LEADER';
   document.getElementById('selection-note').textContent = `Continue to ${name}’s personal registration page below.`;
   document.title = `Register with ${name} · Panther FX`;
 }
