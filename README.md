@@ -28,3 +28,7 @@ Each personal URL displays only that broker’s registration button and the shar
 ## Update content
 
 Registration destinations and the WhatsApp link are in `index.html`. Appearance is in `style.css`; personal page filtering is in `app.js`. Google Fonts are optional; system fonts work if unavailable.
+
+## Numbered personal URLs
+
+Personal names can be omitted from bio URLs: use `?id=2805` (Pablo), `?id=2806` (LX), `?id=2807` (Shen), `?id=2808` (Aemy), `?id=2809` (Fuad), or `?id=2810` (Mus). Older `?broker=` links continue to work. These IDs are public referral identifiers, not passwords.

@@ -1,7 +1,11 @@
-// A personal bio URL such as ?broker=pablo keeps one broker's registration link.
-const selected = new URLSearchParams(window.location.search).get('broker')?.toLowerCase();
+// Numbered bio links omit personal names; older named links still work.
+const params = new URLSearchParams(window.location.search);
+const selected = params.get('broker')?.toLowerCase();
+const registrationId = params.get('id');
 const brokers = [...document.querySelectorAll('[data-broker]')];
-const match = brokers.find((broker) => broker.dataset.broker === selected);
+const match = registrationId
+  ? brokers.find((broker) => new URL(broker.href).pathname.split('/').filter(Boolean).pop() === registrationId)
+  : brokers.find((broker) => broker.dataset.broker === selected);
 if (match) {
   brokers.forEach((broker) => { broker.hidden = broker !== match; });
   const name = match.querySelector('strong').textContent;
